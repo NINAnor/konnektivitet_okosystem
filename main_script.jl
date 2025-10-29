@@ -53,7 +53,9 @@ plot(maps[:ch])
 
 write("output/" * ecosystem * "_" * kommune * "_funksjonelthabitat_ref.tif", maps[:ch], force=true)
 
+
 # 2. Loop over municipalities -------------------
+kommuner = ["bodo", "holtalen", "sandefjord", "ullensaker", "nordreisa"]
 ecosystem = okosystemer[1]
 
 # compute inputs
@@ -83,9 +85,10 @@ for kommune in kommuner
 end
 
 
-
 # 3. Loop over municipalities and ecosystems -------------------
-# note this loop will only work if the data are available for the other ecosystems too
+# note the other ecosystems were not computed for all municipalities
+kommuner = ["moss", "bodo", "holtalen"]
+okosystemer = ["broadleaved_forest", "type5_2"]
 
 # compute inputs
 for kommune in kommuner
