@@ -54,10 +54,11 @@ end
 
 solver   = ConScape.VectorSolver()
 
+# see report for description
 theta=1.0
-optimal_r = 88
-alpha = 1/2500
-Alpha = alpha * optimal_r
+optimal_r = 88 # the distance conversion rate: converts the cost distance from ConScape into meter equivalent -- which, for ease of interpretation, allows alpha to be expressed in Euclidean distance
+alpha = 1/2500 # distance decay rate for the Euclidean distance
+Alpha = alpha * optimal_r # the actual distance decay used in ConScape for the cost (not Euclidean) distance.
 res = 50
 radius = Int(10_000 / res)
 centersize = 20
